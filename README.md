@@ -4,7 +4,7 @@ Welcome to my internship portfolio, a curated showcase of my journey as an **AI 
 
 ## 🧑‍💻 About Me
 
-Hi! I'm **Moanish**, an Applied Artificial Intelligence student passionate about sustainability, automation, and human-centered technology. This portfolio documents the technical artefacts, reflections, and growth I’ve experienced during my 3-month internship with the **Transformation Office**.
+Hi! I'm **Moanish**, an Applied Artificial Intelligence student passionate about sustainability, automation, and human-centered technology. This portfolio documents the technical artefacts, reflections, and growth I’ve experienced during my first 3 months of internship with the **Transformation Office**.
 
 ## 🏢 Internship Overview
 
