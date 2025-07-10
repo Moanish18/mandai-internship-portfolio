@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+</head>
+
+<body
+  class="bg-gradient-to-br from-green-100 to-white text-gray-800 font-sans leading-relaxed tracking-wide flex flex-col bg-fixed">
+  <nav class="bg-white/80 backdrop-blur-md text-green-900 p-4 shadow-md border-b border-green-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold">Digital Portfolio</div>
+      <div class="space-x-4 text-sm">
+        <a href="index.html" class="hover:text-yellow-500">Home</a>
+        <a href="about.html" class="hover:text-yellow-500">About Me</a>
+        <a href="company.html" class="hover:text-yellow-500">Company & Role</a>
+        <a href="work.html" class="hover:text-yellow-500 font-bold underline">My Work</a>
+        <a href="journal.html" class="hover:text-yellow-500">Journal</a>
+        <a href="reflection.html" class="hover:text-yellow-500">Past Reflection</a>
+        <a href="skills.html" class="hover:text-yellow-500">Skills</a>
+        <a href="outlook.html" class="hover:text-yellow-500">Future Outlook</a>
+        <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto p-6">
+    <h1 class="text-4xl font-bold text-green-800 mb-10 text-center" data-aos="fade-down">📁 My Projects</h1>
+
+    <!-- 📁 Procurement RPA Bot - Detailed Breakdown -->
+    <details id="rpa-bot" class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group"
+      data-aos="fade-up">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        🔧 Procurement RPA Bot
+      </summary>
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+        This RPA solution automated the retrieval, downloading, renaming, classification, and uploading of procurement
+        files from the
+        Sesami online portal to SharePoint. It was developed using Microsoft Power Automate for desktop.
+      </p>
+
+      <!-- Step-by-step gallery -->
+      <div class="space-y-10">
+        <div class="space-y-4" data-aos="fade-up">
+          <img src="images/Step1_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 1">
+          <p class="text-center"><strong>Step 1:</strong> Login to Sesami portal using credentials input through UI
+            elements. Sort the results shown by the closing date of the Quotation. Navigate to the procurement response
+            page and trigger search
+            automation. Extract all the links and save them to a data table to view the Tender details. Clean the Data
+            Table of Duplicates.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/Step2_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 2">
+          <p class="text-center"><strong>Step 2:</strong> From the extracted datatable, loop through each of the link
+            inside it.
+            When the robot goes through each link, scroll to a checkbox to be ticked, to download all the files uploaded
+            by the vendor. For special cases where Vendor has no files uploaded,
+            print the whole page to see if there is any Quotation given by them. Selected actions with a shield beside
+            means that they will work on error. This is to prevent the robot from crashing.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/Step3_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 3">
+          <p class="text-center"><strong>Step 3:</strong> The robot is redirected to another page which consists of all
+            the Quotation Analysis Information of RFQs in an excel spreadsheet.
+            The robot sorts the results shown by the closing date of the Quotation and only extracts RFQs. Then all the
+            links of the Quotation
+            Analysis' shown are extracted into a Data Table. The Data Table is cleaned of any duplicate values.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/Step4_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 4">
+          <p class="text-center"><strong>Step 4:</strong> The robot loops through the Data table extracted of the links
+            of the Quotation Analysis.
+            It downloads all of RFQ Quotation Analysis' which are in an excel spreadsheet.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="400">
+          <img src="images/Step5_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 5">
+          <p class="text-center"><strong>Step 5:</strong> The robot is redirected to the same page as Step 3
+            The robot sorts the results shown by the closing date of the Quotation and only Tenders are shown. Then all
+            the links of the Quotation
+            Analysis' shown are extracted into a Data Table. The Data Table is cleaned of any duplicate values.
+            The robot loops through the Data table extracted of the links of the Quotation Analysis'. It downloads all
+            of Tender Quotation Analysis' which are in an excel spreadsheet.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="500">
+          <img src="images/Step6_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 6">
+          <p class="text-center"><strong>Step 6:</strong> Use "Move File" to classify uploaded content based on file
+            type. *.zip file types consist of the Quotation Responses, *.pdf files contains the Quotation Responses
+            pages which are printed out on Step 2 and finally *.xls files contain the Quotation Analysis' which were
+            downloaded previously. These files are uploaded into sharepoint by breaking them down into binary data.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="600">
+          <img src="images/Step7_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 7">
+          <p class="text-center"><strong>Step 7:</strong> Once each downloaded data is uploaded into sharepoint, all the
+            files are deleted from the local machine to save storage. Then the sharepoint folder which consists of all
+            of the files uploaded, will be scanned through and the files stored inside will be extracted separately as a
+            variable.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="700">
+          <img src="images/Step8_RPA.png" class="w-full max-w-5xl mx-auto rounded-lg shadow" alt="Step 8">
+          <p class="text-center"><strong>Step 8:</strong> All of the downloaded files will be sorted by Department and
+            file types uploaded into separate folders. The Quotation Analysis will be under the same folder as
+            downloaded zip files.</p>
+        </div>
+
+        <!-- Final Result -->
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="800">
+          <img src="images/RPA_Final_Outcome.png" class="w-full max-w-4xl mx-auto rounded-lg shadow" alt="Final Output">
+          <p class="text-center font-semibold text-green-700 text-lg">
+            ✅ <strong>Final Outcome:</strong> The robot autonomously processed and uploaded all procurement
+            documents—ZIPs, PDFs, and Excel analysis' to a structured SharePoint environment, sorted by department and
+            document type. <strong>The Result:</strong> A fully automated and transparent procurement archiving workflow
+            that saves time,
+            reduces errors, and enables fast access to all Quotation and Tender data across the organisation.
+          </p>
+        </div>
+      </div>
+    </details>
+
+    <!-- 🌐 GenAI Tourism Analysis -->
+    <details id="genai" class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group" data-aos="fade-up">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        🧠 Gen AI Tourism Analysis
+      </summary>
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+        This experiment compared how different GenAI platforms recommend Singapore’s tourist attractions. Our goal was
+        to measure <strong>Mandai brand visibility</strong> (e.g., Singapore Zoo, River Wonders, Night Safari) across 10
+        popular AI tools like ChatGPT, Claude, Gemini, and Copilot.
+      </p>
+
+      <!-- Image 1: Raw data -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/GenAIAnalysis.png" alt="Raw AI Responses Table"
+          class="w-full max-w-5xl mx-auto rounded-lg shadow-lg border border-green-300">
+        <p class="text-center text-gray-800">
+          <strong>Step 1:</strong> AI-generated itineraries were evaluated using a structured Excel sheet. The sheet
+          captured if Mandai parks were mentioned, their positions in the itinerary, and description quality. Each row
+          logged a specific platform’s output, user prompt, and the exact phrasing used.
+        </p>
+      </div>
+
+      <!-- Image 2: Pivot results -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/GenAIDataAnalysis.png" alt="Excel Pivot Summary"
+          class="w-full max-w-5xl mx-auto rounded-lg shadow-lg border border-green-300">
+        <p class="text-center text-gray-800">
+          <strong>Step 2:</strong> Using PivotTables, we summarised platform performance. Copilot and Gemini had the
+          best Mandai brand recall, while ChatGPT and Claude underperformed. River Wonders, Bird Paradise and Rainforest
+          Wild Asia had very low visibility across all platforms.
+        </p>
+      </div>
+
+      <!-- Insights -->
+      <div class="bg-green-50/70 border border-green-300 rounded-xl p-6 shadow-md space-y-3" data-aos="fade-up"
+        data-aos-delay="300">
+        <h3 class="text-2xl font-semibold text-green-700 text-center">🔍 Key Findings</h3>
+        <ul class="list-disc list-inside text-gray-800 text-base space-y-2">
+          <li><strong>Visibility:</strong> Mandai was mentioned in only 43% of AI-generated itineraries.</li>
+          <li><strong>Best Performers:</strong> Copilot (Think Deeper), Gemini (2.5 Flash) mentioned 4/5 parks more
+            frequently.</li>
+          <li><strong>Worst Performers:</strong> ChatGPT and Claude missed even flagship parks like the Zoo and Night
+            Safari.</li>
+          <li><strong>Sentiment:</strong> Responses were generally <span
+              class="text-green-600 font-medium">positive</span>, but lacked depth.</li>
+          <li><strong>Vagueness:</strong> Many descriptions were vague or generic, showing room for prompt tuning and
+            refinement.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- MyProject100K Townhall Video -->
+    <details id="project100k" class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group"
+      data-aos="fade-up">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        🎬 MyProject100K Townhall Video
+      </summary>
+      <p class="text-lg text-center text-gray-700 max-w-4xl mx-auto">
+        A high-impact 100-second documentary-style video shown during the <strong>Mandai Townhall</strong> to showcase
+        productivity and culture change.
+        I handled end-to-end production across planning, filming, editing and delivery — all within <strong>6
+          weeks</strong>.
+      </p>
+
+      <!-- Pre-Production -->
+      <div class="space-y-4" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-green-700">🧠 Pre-Production: Planning & Storyboarding</h3>
+        <img src="images/Storyboard_Skeleton.png" class="w-full max-w-5xl mx-auto rounded-xl shadow mt-4"
+          alt="Storyboard Skeleton">
+        <img src="images/P100K_Questions.png" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="100K Interview Questions" />
+        <p class="text-gray-800">
+          Before filming, we planned the interview structure and created a visual storyboard covering all 5 segments of
+          the video:
+          intro, speaker snippets, b-roll montage, question transitions, and outro message. Questions were designed to
+          be
+          <strong>reflective,
+            open-ended, and emotionally engaging</strong>. We collaborated with the Transformation Office to identify
+          speakers from various departments
+          (e.g. Vets, HR, Park Ops) and scheduled filming slots in <strong>real workplace environments</strong> such as
+          zoo entrance, office corners,
+          and clinics.
+        </p>
+      </div>
+
+      <!-- Filming Phase -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-semibold text-green-700">🎥 Filming: Execution & Setups</h3>
+        <img src="images/Storyboard_Main.png" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="Storyboard Filming Guide">
+        <p class="text-gray-800">
+          Filming was conducted with a <strong>GoPro Hero 9</strong> and clip-on DJI Wireless microphones for
+          optimal clarity. Each interview
+          session lasted 45 minutes with multiple takes to ensure authentic delivery. I also captured b-roll footage
+          of staff in action —
+          Doing animal health analysis, attending meetings, using systems or new applications. Each shot was
+          intentionally framed to
+          <strong>align with being grounded, natural, and people-focused</strong>.
+        </p>
+        <p class="text-gray-800 italic">
+          🎯 <strong>Filming Challenges:</strong> We worked under time constraints and limited indoor lighting. Some
+          staff were camera-shy,
+          so I had to improvise with alternative angles and quick cutaway shots to retain energy and flow.
+        </p>
+      </div>
+
+      <!-- Post Production -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-semibold text-green-700">💻 Post-Production: Editing & Delivery</h3>
+        <img src="images/P100KVideo.png" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="Final Video Production">
+        <p class="text-gray-800">
+          I edited the entire video using <strong>Wondershare Filmora</strong>. I stitched together 10+ interview clips,
+          b-rolls, and overlayed
+          transitions, background music, and speaker labels. Key moments were synchronised to the soundbites.
+        </p>
+        <p class="text-gray-800">
+          The video was polished with visual transitions and
+          an upbeating sound track.
+          We went through 3 internal review rounds, and the final deliverable was broadcasted to the entire organisation
+          at
+          the Townhall 2025.
+        </p>
+        <p class="text-gray-800 italic">
+          💡 <strong>What I learned:</strong> Working across planning, filming, and editing taught me end-to-end
+          production. I grew in
+          confidence, adaptability, and most of all creative direction.
+        </p>
+        <!-- Sexy Video Player with overlay & glow -->
+        <div class="relative group max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-green-200"
+          data-aos="zoom-in-up">
+          <video class="w-full h-auto group-hover:brightness-105 transition duration-300" controls>
+            <source src="videos/P100K_Townhall_Video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Animated ring glow -->
+          <div
+            class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-green-300 to-lime-300 blur-sm opacity-60 group-hover:opacity-90 transition-all duration-500 z-[-1]">
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Day-in-the-Life (DILO) Observation -->
+    <details id="dilo" class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group" data-aos="fade-up">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        📌 Day-in-the-Life (DILO) Observation
+      </summary>
+      <p class="text-lg text-center text-gray-700 max-w-4xl mx-auto">
+        A full-day shadowing exercise with the <strong>South Zone Herbivore Team</strong> to identify process pain
+        points and opportunities
+        for productivity improvements. This field-based task gave us hands-on experience and led to impactful redesign
+        suggestions.
+      </p>
+
+      <!-- Process Timeline -->
+      <div class="space-y-4" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-green-700">📅 Timeline of Keeper Tasks</h3>
+        <img src="images/Time_and_Activities.png" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="Time and Tasks">
+        <p class="text-gray-800 text-center">
+          We observed and recorded all key activities carried out by the team — from <strong>cleaning dens and preparing
+            food</strong>
+          to <strong>feeding, medication, and closing routines</strong>. This granular view helped us understand pain
+          points and overlaps.
+        </p>
+      </div>
+
+      <!-- Process Mapping -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-semibold text-green-700">🧾 Miro-Based Process Mapping</h3>
+        <img src="images/Process_Map.png" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="Process Mapping Diagram">
+        <p class="text-gray-800 text-center">
+          Using <strong>Miro</strong>, we mapped out current workflows and highlighted repeated bottlenecks. This
+          visualisation made it easier
+          to pinpoint improvement areas and propose streamlined alternatives.
+        </p>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-semibold text-green-700">💡 Productivity Suggestions</h3>
+        <img src="images/Our Suggestions.png" class="w-full max-w-5xl mx-auto rounded-xl shadow" alt="Suggestions List">
+        <p class="text-gray-800 text-center">
+          From proposing a <strong>hand-held rockmelon cutter</strong> to process flow redesigns, we provided the team
+          with feasible, low-effort,
+          high-impact solutions. These suggestions were presented to operations and management for implementation.
+        </p>
+      </div>
+
+      <!-- Impact-Effort Map -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-2xl font-semibold text-green-700">📊 Impact-Effort Mapping</h3>
+        <img src="images/Impact_Effort_Map.png" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="Impact-Effort Matrix">
+        <p class="text-gray-800 text-center">
+          All ideas were plotted on a matrix to balance <strong>impact on productivity, staff quality of life, and guest
+            experience</strong>
+          versus ease of execution. This tool guided the final selection of changes to pilot first.
+        </p>
+      </div>
+
+      <!-- Reflections -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-2xl font-semibold text-green-700">📝 Reflections</h3>
+        <p class="text-gray-800 text-center italic">
+          🦏 This was one of the most physically demanding and eye-opening projects I’ve worked on. We didn’t just
+          observe — we fully
+          immersed ourselves in the daily routines of the Herbivore Team. From carrying buckets of feed, washing
+          enclosures, preparing
+          enrichment items, to scrubbing floors and cleaning poop, we experienced the physical and mental toll that
+          frontline animal
+          care staff endure every day. <br /><br />
+          What struck me most was the level of coordination and stamina required to keep operations running smoothly.
+          Every task was
+          done with care, speed, and deep awareness of animal welfare even when resources were stretched. Seeing their
+          hustle made
+          me realise how even small inefficiencies in a workflow can have ripple effects on wellbeing, morale, and
+          guest-facing time. <br /><br />
+          Through this project, I learned that digital transformation must be grounded in empathy. It’s not just about
+          process
+          diagrams and automation ideas — it’s about designing solutions that <strong>truly support the people</strong>
+          on the ground.
+          This experience taught me to be more observant, more patient, and above all, more human in my approach to
+          problem-solving.
+        </p>
+      </div>
+    </details>
+
+    <!-- 🧾 AI Receipt Detection Testing -->
+    <details id="receipt-ai" class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group"
+      data-aos="fade-up">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        🧾 AI Receipt Detection Testing
+      </summary>
+
+      <!-- Description -->
+      <p class="text-lg text-center text-gray-700 max-w-4xl mx-auto mb-6">
+        Collaborated with my supervisor to evaluate an AI model’s accuracy in identifying <strong>receipt transaction
+          numbers</strong> from scanned hardcopy receipts.
+        Used a personally trained model under Microsoft’s AI Builder and ran batch testing using receipts extracted from
+        <strong>MS Forms, Email, and
+          Upload</strong> methods. Results were visualised and benchmarked.
+      </p>
+
+      <!-- Image 1: AI Model Prediction Sample -->
+      <div class="space-y-4" data-aos="fade-up">
+        <img src="images/ReceiptAnalysis.jpeg" class="w-full max-w-5xl mx-auto rounded-xl shadow"
+          alt="AI Receipt Detection Output">
+        <p class="text-center text-gray-800">
+          <strong>Step 1:</strong> Used our AI Builder’s pre-trained AI model to detect the <strong>OE
+            Transaction No</strong> field. Confidence scores were logged in an excel spreadsheet for each image.
+        </p>
+      </div>
+
+      <!-- Image 2: Excel Comparison Table -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/ReceiptAnalysisExcel.png" class="w-full max-w-6xl mx-auto rounded-xl shadow"
+          alt="Receipt Result Excel Comparison">
+        <p class="text-center text-gray-800">
+          <strong>Step 2:</strong> Conducted accuracy testing with 4 different users across 2 input methods (Email vs MS
+          Form).
+          Each extracted value was compared to the actual ticket ID. Match rate and confidence levels were recorded.
+          This enabled us to benchmark performance of AI predictions across <strong>different input pipelines</strong>.
+        </p>
+      </div>
+
+      <!-- Image 3: Final Folder Sorting -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/ReceiptAnalysisFinalSorting.jpeg" class="w-full max-w-4xl mx-auto rounded-xl shadow"
+          alt="Folder Sorting">
+        <p class="text-center text-gray-800">
+          <strong>Step 3:</strong> Based on the testing, files were categorised into <span class="font-medium">Correctly
+            Identified</span> and <span class="font-medium">Wrongly Identified</span> for deeper analysis. This helped
+          determine which receipts consistently failed and helped us to re-train the AI Model.
+        </p>
+      </div>
+
+      <!-- Key Takeaways -->
+      <div class="bg-green-50/70 border border-green-300 rounded-xl p-6 shadow-md space-y-3 mt-6" data-aos="fade-up"
+        data-aos-delay="300">
+        <h3 class="text-2xl font-semibold text-green-700 text-center">🔍 Key Insights</h3>
+        <ul class="list-disc list-inside text-gray-800 text-base space-y-2">
+          <li><strong>Accuracy:</strong> The AI Builder model achieved a 97% average match rate across 40+ receipts.
+          </li>
+          <li><strong>Input Sensitivity:</strong> MS Forms had slightly more consistent recognition than Email
+            attachments.</li>
+          <li><strong>Error Types:</strong> Errors were mostly due to unclear lighting, crumpled paper, or faded ink.
+          </li>
+          <li><strong>Value:</strong> Validated that low-code AI extraction tools can significantly support manual
+            ticket reconciliation.</li>
+        </ul>
+      </div>
+    </details>
+
+
+    <!-- 💬 HR Chatbot Testing -->
+    <details id="hr-chatbot" class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group"
+      data-aos="fade-up">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        💬 HR Chatbot Testing
+      </summary>
+
+      <p class="text-lg text-center text-gray-700 max-w-4xl mx-auto">
+        This task involved validating the accuracy of a Generative AI-powered chatbot integrated into Microsoft Teams
+        (AskHR Copilot). The bot is designed to assist staff by answering common HR policy questions on leave, claims,
+        payroll, and workplace conduct.
+      </p>
+
+      <!-- Screenshot 1: Chatbot UI -->
+      <div class="space-y-4" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-green-700">🧪 Testing the AskHR Chatbot</h3>
+        <img src="images/HRChatBotTest1.png" class="w-full max-w-5xl mx-auto rounded-xl shadow" alt="Chatbot Q&A 1">
+        <img src="images/HRChatbotTest2.png" class="w-full max-w-5xl mx-auto rounded-xl shadow" alt="Chatbot Q&A 2">
+        <p class="text-gray-800 text-center">
+          I asked realistic employee queries like <strong>“Can I skip work without applying leave?”</strong> and
+          <strong>“How do I
+            claim OT pay?”</strong> and verified if the chatbot's responses matched actual HR policy.
+        </p>
+      </div>
+
+      <!-- Excel Screenshot: Testing Matrix -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-semibold text-green-700">🧾 Chatbot Policy Accuracy Review</h3>
+        <img src="images/HRChatbotAnalysis1.png"
+          class="w-full max-w-5xl mx-auto rounded-xl shadow border border-green-300" alt="Chatbot Testing Matrix 1">
+        <img src="images/HRChatbotAnalysis2.png"
+          class="w-full max-w-5xl mx-auto rounded-xl shadow border border-green-300" alt="Chatbot Testing Matrix 2">
+        <p class="text-gray-800 text-center">
+          I populated a structured matrix to document chatbot responses, benchmark accuracy, and flagged any
+          hallucinated
+          or outdated information. A “Remarks” column was used to suggest fixes for HR review.
+        </p>
+      </div>
+
+      <!-- Insights -->
+      <div class="bg-green-50/70 border border-green-300 rounded-xl p-6 shadow-md space-y-3" data-aos="fade-up"
+        data-aos-delay="200">
+        <h3 class="text-2xl font-semibold text-green-700 text-center">🔍 Key Findings</h3>
+        <ul class="list-disc list-inside text-gray-800 text-base space-y-2">
+          <li>Most responses were generally <strong>accurate</strong> and aligned with Mandai HR policies.</li>
+          <li>Detected a few <strong>hallucinations</strong>, e.g., chatbot claimed “tuina” is claimable under TCM,
+            which is false.</li>
+          <li>Suggested rewording for <strong>incomplete answers</strong> to improve clarity for employees.</li>
+          <li>Tested edge cases such as leave abuse, specialist claims, and staff awards eligibility.</li>
+        </ul>
+      </div>
+    </details>
+
+
+    <!-- 🤖 Microsoft Copilot Prompt Engineering -->
+    <details class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group" data-aos="fade-up"
+      data-aos-delay="200">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        🤖 Microsoft Copilot Prompt Engineering
+      </summary>
+
+      <div class="space-y-6 mt-4">
+        <!-- Overview -->
+        <p class="text-lg text-gray-800 text-center max-w-3xl mx-auto">
+          This task was part of a focused assignment from the Transformation Office to explore prompt engineering for
+          <strong>Microsoft 365 Copilot</strong>.
+          The goal was to reduce hallucinations and ensure <strong>safe, evidence-based responses</strong> when users
+          ask about Mandai’s membership pricing,
+          perks, or benefits. I applied <strong>structured prompting techniques</strong> like <strong>RACE</strong> and
+          <strong>CREATE</strong> to guide Copilot towards grounded answers.
+        </p>
+
+        <!-- Task Brief Screenshot -->
+        <div class="flex justify-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/CopilotPromptENgineeringTaskAssignation.png" alt="Prompt Engineering Task Brief"
+            class="rounded-xl shadow border border-green-300 w-full max-w-3xl" />
+        </div>
+
+        <!-- Explanation of Prompt Engineering -->
+        <div class="bg-green-50/60 p-6 rounded-xl shadow border border-green-200 space-y-4" data-aos="fade-up"
+          data-aos-delay="150">
+          <h3 class="text-2xl font-semibold text-green-700 text-center">🧠 How I Engineered the Prompt</h3>
+          <p>
+            I used the <strong>RACE</strong> and <strong>CREATE</strong> frameworks to rebuild the system instructions
+            inside Copilot Studio. Here's how:
+          </p>
+          <ul class="list-disc list-inside text-gray-800 text-base space-y-2">
+            <li><strong>Role:</strong> Defined the bot as a logic-bound assistant focused on document-first
+              responses.</li>
+            <li><strong>Action:</strong> Instructed Copilot to prioritise ONLY verified facts from the official Mandai
+              Website, and quote sources.</li>
+            <li><strong>Context:</strong> Specified Mandai’s wide park offerings, membership types, and the need for
+              accurate guest-facing responses.</li>
+            <li><strong>Examples:</strong> Crafted example queries like “How much is Friends of Mandai Plus?” and
+              specified expected structured replies.</li>
+            <li><strong>Adjustment:</strong> Prevented hallucinations by restricting replies to only what’s in the
+              website or known verified sources.</li>
+          </ul>
+        </div>
+
+        <!-- Before and After Prompt Screenshots -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-center">
+            <p class="text-xl font-semibold text-green-600 mb-2">Before Prompt Engineering</p>
+            <img src="images/CopilotPromptBefore.png" alt="Before Prompt"
+              class="rounded-xl shadow border border-green-300 w-full" />
+          </div>
+          <div class="text-center">
+            <p class="text-xl font-semibold text-green-600 mb-2">After Prompt Engineering</p>
+            <img src="images/CopilotPromptAfter.png" alt="After Prompt"
+              class="rounded-xl shadow border border-green-300 w-full" />
+          </div>
+        </div>
+
+        <!-- Copilot Final Response -->
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-2xl font-semibold text-green-700 text-center">✅ AI Response After Refinement</h3>
+          <div class="flex justify-center">
+            <img src="images/CopilotResponseWithoutHallucination.png" alt="AI Response"
+              class="rounded-xl shadow border border-green-300 w-full max-w-2xl" />
+          </div>
+          <p class="text-center text-gray-700 max-w-3xl mx-auto">
+            The final result was a prompt that enforced <strong>document-grounded outputs</strong>, fallback logic,
+            and respectful refusal when information was missing. It was a real lesson in balancing
+            <strong>clarity, structure, and control</strong> when designing industry-ready AI tools.
+          </p>
+        </div>
+      </div>
+    </details>
+
+
+    <!-- 🌐 Web Automation RPA (Klook Scraper - On Hold) -->
+    <details class="rounded-xl border border-green-300 bg-white/40 shadow p-4 my-6 group" data-aos="fade-up"
+      data-aos-delay="300">
+      <summary
+        class="cursor-pointer text-3xl font-semibold text-green-700 hover:text-green-900 transition-all duration-300">
+        🌐 Web Automation RPA – Klook Scraper (On Hold)
+      </summary>
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mt-4">
+        This RPA bot was designed to automate the extraction of attraction details and ticket prices from Klook and similar
+        booking platforms. The workflow involved launching Edge, running custom JavaScript to extract anchor tags,
+        looping through links,
+        scraping page content, and invoking a GPT API for semantic summarisation.
+      </p>
+
+      <div class="space-y-6 mt-6" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/Klook_Web_Automation.png"
+          class="w-full max-w-5xl mx-auto rounded-xl shadow border border-green-300" alt="Klook Web Automation Script">
+
+        <p class="text-gray-800 text-center max-w-3xl mx-auto">
+          <strong>Bot Logic:</strong> This bot used JavaScript to extract page-level anchor tags from a tourism site,
+          looped through
+          each link in a new tab, scraped content using clipboard capture, parsed it with GPT-4 API, and generated
+          price-focused summaries.
+          It streamlined multi-page scraping using low-code automation steps.
+        </p>
+      </div>
+
+      <div class="space-y-4 mt-8" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/WebAutomationOnHold.png"
+          class="w-full max-w-4xl mx-auto rounded-xl shadow border border-green-300"
+          alt="Web Automation On Hold Notice">
+        <p class="text-center strong text-gray-700 max-w-2xl mx-auto">
+          <strong>⚠️ This project was placed on hold after internal review due to a shift in automation priorities and pending
+          scope clarifications. Future action
+          depends on internal stakeholder alignment.</strong>
+        </p>
+      </div>
+    </details>
+
+    <!-- Certifications -->
+    <h2 class="text-3xl mt-16 font-semibold text-green-700 text-center" data-aos="fade-right">🏅 Internal
+      Certifications</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6" data-aos="fade-up">
+      <!-- Each Cert Card -->
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in">
+        <img src="images/Screenshot 2025-04-27-at-10.25.33-PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="Cybersecurity Awareness">
+        <p class="mt-2 font-semibold">Cybersecurity Awareness</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/Screenshot 2025-04-27 at 9.09.01PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="Anti-Bribery & Corruption">
+        <p class="mt-2 font-semibold">Anti-Bribery & Corruption</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/Screenshot 2025-04-27 at 10.45.46PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="PDPA Part 1">
+        <p class="mt-2 font-semibold">PDPA Part 1</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/Screenshot 2025-04-27 at 11.29.43PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="PDPA Part 2">
+        <p class="mt-2 font-semibold">PDPA Part 2</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="400">
+        <img src="images/Screenshot 2025-04-27 at 9.21.40PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="Innovation Tools Training">
+        <p class="mt-2 font-semibold">Innovation Tools Training</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="500">
+        <img src="images/Screenshot 2025-04-27 at 9.41.02PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="Intro to Sustainability Part 1">
+        <p class="mt-2 font-semibold">Intro to Sustainability Part 1</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="600">
+        <img src="images/Screenshot 2025-04-27 at 10.04.19PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="Intro to Sustainability Part 2">
+        <p class="mt-2 font-semibold">Intro to Sustainability Part 2</p>
+      </div>
+
+      <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg border border-green-300 p-4 text-center"
+        data-aos="zoom-in" data-aos-delay="700">
+        <img src="images/Screenshot 2025-04-27 at 10.38.58PM.png" class="w-[400px] mx-auto rounded shadow"
+          alt="Information Security">
+        <p class="mt-2 font-semibold">Information Security</p>
+      </div>
+    </div>
+    </section>
+  </main>
+
+  <footer class="bg-white/30 backdrop-blur-md text-green-900 text-sm text-center py-4 mt-12 border-t border-green-200">
+    © 2025 Moanish | Mandai Internship Portfolio
+  </footer>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+
+</html>
